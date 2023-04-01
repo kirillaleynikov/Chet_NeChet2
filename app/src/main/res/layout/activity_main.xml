@@ -86,4 +86,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnRepeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Заново"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/FrameComputer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FrameUser" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

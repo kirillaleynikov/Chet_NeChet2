@@ -1,4 +1,5 @@
 package com.example.chet_nechet
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -23,9 +24,11 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.FrameComputer.isVisible = true
-        var btnCl = true
+        val btnCl = true
 
         binding.btnStart.setOnClickListener {
+            binding.btnStart.isVisible = false
+            binding.btnRepeat.isVisible = true
             binding.tvCompWinners.isVisible = true
             binding.tvUserWinners.isVisible = true
             dataModel.messageForComputerFragment.value = btnCl.toString()
@@ -42,9 +45,18 @@ class MainActivity : AppCompatActivity() {
                 binding.tvUserWinners.text = trueCounterUser
             }
         }
+        binding.btnRepeat.setOnClickListener{
+            val intent = Intent(this, this::class.java)
+
+            finish()
+            startActivity(intent)
+
+
+        }
 
         binding.btnClose.setOnClickListener{
             finish()
+
         }
     }
     private fun openFrag(f: Fragment, idHolder: Int)
